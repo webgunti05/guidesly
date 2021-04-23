@@ -31,7 +31,6 @@ const Contact = () => {
         setMessage(e.target.value);
     }
     return(
-        <>
         <Layout>
             <HomePageWrapper>
                 <CenterSection>
@@ -47,8 +46,6 @@ const Contact = () => {
                 </CenterSection>
             </HomePageWrapper>
         </Layout>
-        
-        </>
     )
 }
 

@@ -4,8 +4,7 @@ import { HomePageWrapper, CenterSection, IntroTitle, IntroDesc } from "./pagesSt
 
 const Home = () => {
   return (
-    <>
-      <Layout>
+    <Layout>
         <HomePageWrapper>
             <CenterSection>
             <IntroTitle>Welcome to Guidesly</IntroTitle>
@@ -21,8 +20,7 @@ const Home = () => {
 
           
         </HomePageWrapper>
-      </Layout>
-    </>
+    </Layout>
   );
 };
 

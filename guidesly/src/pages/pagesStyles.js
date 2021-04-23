@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { FONT_FAMILY, COLORS } from "../constants";
+import { FONT_FAMILY, COLORS, BREAKPOINTS } from "../constants";
 
 export const ClearFix = styled.div`
   clear: both;
@@ -9,6 +9,10 @@ export const HomePageWrapper = styled.div`
   background-color: ${COLORS.GRAY_LIGHTER};
   height: 100vh;
   position: relative;
+  @media screen and (max-width: ${BREAKPOINTS.TABLET_LANDSCAPE}px) {
+    height:auto;
+    background-color:${COLORS.WHITE};
+  }
 `;
 
 export const CenterSection = styled.div`
@@ -17,6 +21,18 @@ export const CenterSection = styled.div`
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  width:1024px;
+  @media screen and (max-width: ${BREAKPOINTS.TABLET_LANDSCAPE}px) {
+    width:100%;
+
+    position: relative;
+    top: 100px;
+    left: 0px;
+    padding: 0px 20px 20px 20px;
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    box-sizing:border-box;
+  }
 `;
 
 export const IntroTitle = styled.h1`
@@ -31,21 +47,29 @@ export const IntroDesc = styled.p`
 `;
 export const BookGuideList = styled.ul`
   width: 100%;
-  display: flex;
+  display: block;
   list-style: none;
   margin: 0px;
   padding: 0px;
+  
 `;
 export const BookGuideListItem = styled.li`
-  width: 33.3333%;
+  width: 30.3333%;
   float: left;
-  margin: 1% 0.5%;
+  display: block;
+  margin: 1% 1%;
   box-sizing: border-box;
   border: 1px solid ${COLORS.GRAY_LIGHT};
   padding: 8px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
+  @media screen and (max-width: ${BREAKPOINTS.MOBILE_DEVICES}px) {
+    width: 98%;
+    float: none;
+    margin: 1% 1%;
+    display:block;
+  }
 `;
 export const BookGuideListImage = styled.img`
   width: 100%;
@@ -69,20 +93,25 @@ export const ContactAdress = styled.p`
 `;
 export const ContactForm = styled.form`
   display: flex;
+  @media screen and (max-width: ${BREAKPOINTS.TABLET_LANDSCAPE}px) {
+    display: block;
+  }
   .inputStyle {
     padding: 6px 10px;
     font-family: ${FONT_FAMILY};
     -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 1px solid ${COLORS.GRAY_LIGHT};
-  background-color: ${COLORS.WHITE};
-  margin:2px;
-  &:focus{
-    box-shadow:0px 0px 5px ${COLORS.HOVER_COLOR};
-    border:none;
-    outline:none;
-  }
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    border: 1px solid ${COLORS.GRAY_LIGHT};
+    background-color: ${COLORS.WHITE};
+    margin: 2px;
+    width:100%;
+    box-sizing:border-box;
+    &:focus {
+      box-shadow: 0px 0px 5px ${COLORS.HOVER_COLOR};
+      border: none;
+      outline: none;
+    }
   }
 `;
 
@@ -94,9 +123,9 @@ export const ContactFormButton = styled.button`
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  border:none;
-  height:33px;
-  margin-top:2px;
-  cursor:pointer;
+  border: none;
+  height: 33px;
+  margin-top: 2px;
+  cursor: pointer;
   color: ${COLORS.WHITE};
 `;
